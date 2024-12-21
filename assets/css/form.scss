@@ -1,0 +1,467 @@
+/*================Form==============*/
+.form {
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -11px;
+		>* {
+			margin-left: 11px;
+			margin-bottom: 13px;
+		}
+	}
+	&__item {
+		width: calc(100% - 11px);
+		&_half {
+			width: calc(50% - 11px);
+		}
+	}
+	&__input {
+		input, textarea {
+			width: 100%;
+			border-radius: 8px;
+			background: rgb(243, 247, 250);
+			padding: 14.04px 20px;
+			@include text;
+			&::placeholder {
+				color: $bl;
+				opacity: 1;
+			}
+		}
+		textarea {
+			resize: none;
+			height: 45px;
+			&::placeholder {
+				color: rgb(147, 147, 147);
+			}
+		}
+	}
+	&__description {
+		font-family: $ff;
+		font-size: 10px;
+		font-weight: 500;
+		color: $bl;
+		line-height: $lh;
+		span {
+			display: inline-block;
+			padding-top: 6px;
+			font-size: 14px;
+			vertical-align: middle;
+		}
+	}
+	&__agree {
+		font-family: $ff;
+		font-size: 10px;
+		font-weight: 500;
+		color: rgb(147, 147, 147);
+		line-height: $lh;
+		span {
+			color: $bl;
+		}
+		a {
+			color: $blue;
+			text-decoration: underline;
+			transition: all .2s linear;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&__row {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+	&__col {
+		margin-right: 20px;
+	}
+}
+/*===============/form==============*/
+
+/*================Radiobox==============*/
+.radiobox {
+	display: inline-flex;
+	background-color: $lgray;
+	border-radius: 8px;
+	&-btn {
+		position: relative;
+		flex: 1 1 auto;
+		label {
+			width: 100%;
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $lgray;
+			border: 1px solid $lgray;
+			padding: 15px;
+			border-radius: 8px;
+			font-family: $ff;
+			font-size: 12px;
+			font-weight: 500;
+			color: rgb(70, 78, 85);
+			line-height: $lh;
+			transition: all .2s linear;
+			&:after {
+				content: "";
+				width: 1px;
+				height: 21px;
+				background-color: #DADDE0;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				z-index: 1;
+			}
+		}
+		&:last-child {
+			label {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		&.unborder {
+			label {
+				&:after {
+					display: none;
+				}
+			}
+		}
+		input {
+			display: none;
+			&:checked + label {
+				color: $red;
+				border-color: $red;
+				background-color: $wh;
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+/*===============/radiobox==============*/
+
+/*==========Selectcheckbox=========*/
+.selectcheckbox {
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	position: relative;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	width: 190px;
+	&_top {
+		.selectcheckbox__dropdown {
+			top: auto;
+			bottom: calc(100% + 5px);
+		} 
+	}
+	&__select {
+		width: 100%;
+		height: 100%;
+		transition: all .2s linear;
+		position: relative;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background: rgb(247, 247, 250);
+		padding: 14px 30px 14px 10px;
+		border: 1px solid rgb(233, 233, 233);
+		border-radius: 8px;
+		background-color: transparent;
+		span {
+			@include text;
+		}
+		&:after {
+			content: "";
+			width: 9px;
+			height: 15px;
+			background: url("../images/arrow_thin.svg") center no-repeat;
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			z-index: 1;
+			transform: translateY(-50%);
+			transition: all .3s linear;
+		}
+		&.active {
+			&:after {
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+	}
+	&__option {
+		display: flex;
+		align-items: center;
+		position: relative;
+		justify-content: space-between;
+		padding: 10px 11px;
+		transition: all .2s linear;
+		border-bottom: 1px solid rgb(239, 241, 243);
+		&:last-child {
+			border-bottom: none;
+		}
+		&:hover {
+			span, div {
+				color: $red;
+			}
+		}
+		span {
+			@include text;
+			color: $bl;
+			transition: all .2s linear;
+		}
+		div {
+			color: rgb(189, 198, 206);
+			font-family: $ff;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: $lh;
+			transition: all .2s linear;
+		}
+	}
+	&__dropdown {
+		display: none;
+		position: absolute;
+		top: calc(100% + 5px);
+		left: 0;
+		z-index: 50;
+		background-color: transparent;
+		width: 100%;
+		border-radius: 13px;
+		box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
+		background-color: $wh;
+		max-height: 300px;
+		overflow: auto;
+		-ms-overflow-style: none;
+    	scrollbar-width: none;
+    	::-webkit-scrollbar {
+    	  width: 0;
+    	  height: 0;
+		}
+		&-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 16px 0;
+		}
+		&-close {
+			flex: 0 0 auto;
+			img {
+				width: 18px;
+				margin-right: 24px;
+			}
+		}
+		&-title {
+			flex: 1 1 auto;
+			font-family: $ff;
+			font-size: 22px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			margin-right: 8px;
+		}
+		&-reset {
+			font-family: $ff;
+			font-size: 12px;
+			font-weight: 500;
+			color: $red;
+			line-height: $lh;
+			background-color: $wh;
+		}
+		&-btn {
+			padding: 19px 33px;
+			border-radius: 14px 14px 0px 0px;
+			box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
+			background: $wh;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
+	&__nav {
+		padding: 13px 15px;
+		border-bottom: 1px solid $lgray;
+		.tabs-nav {
+			width: 100%;
+			a {
+				flex: 1 1 auto;
+				padding: 8px;
+				&:after {
+					height: 19px;
+				}
+			}
+		}
+	}
+}
+/*=========/selectcheckbox=========*/
+
+/*=========Range=========*/
+.range {
+	&_multi {
+		.range__input {
+			width: 100px;
+			input {
+				width: 28px;
+			}
+		}
+		.range__row {
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__row {
+		margin-bottom: 20px;
+	}
+	&__item {
+		margin-right: 30px;
+		position: relative;
+		&:after {
+			content: "––";
+			width: 18px;
+			@include text;
+			position: absolute;
+			top: 50%;
+			right: -27px;
+			z-index: 1;
+			transform: translateY(-50%);
+		}
+		&:last-child {
+			margin-right: 0;
+			&:after {
+				display: none;
+			}
+		}
+	}
+	&__input {
+		width: 100%;
+		border: 1px solid rgb(220, 220, 220);
+		border-radius: 6px;
+		padding: 9px 10px;
+		display: flex;
+		align-items: center;
+		input {
+			display: inline-block;
+			width: 45px;
+			margin-right: 1px;
+			background-color: transparent;
+			flex: 0 0 auto;
+			@include text;
+			&::placeholder {
+				color: $bl;
+				opacity: 1;
+			}
+		}
+		label {
+			flex: 1 1 auto;
+			@include text;
+		}
+	}
+	&-line {
+		position: relative;
+		width: 100%;
+		margin-top: 7px;
+		margin-bottom: 7px;
+		//padding-right: 15px;
+		.range-line-wrapper {
+			background: $lgray;
+			padding-right: 7.5px;
+			margin-bottom: 4px;
+			border-radius: 0;
+			position: relative;
+			z-index: 3;
+		}
+		.range-line-wrapper.multirange {
+		  padding-left: 7.5px;
+		}
+		.range-line-wrapper.multirange  .ui-slider .ui-slider-handle{
+		  margin-left: -7.5px;
+		  &:last-child {
+		  	margin-right: 20px;
+		  }
+		}
+		.ui-widget.ui-widget-content {
+		  position: relative;
+		  height: 4px;
+		}
+		.ui-slider .ui-slider-handle {
+			height: 13px;
+			width: 30px;
+			border-radius: 7px;
+			border: 1px solid rgb(151, 151, 151);
+			background: $wh;
+			position: absolute;
+			//margin-left: -2px;
+			top: -5.5px;
+		}
+		.ui-widget-header,
+		.ui-slider-range {
+		  height: 100%;
+		  border-radius: 0;
+		  background: $red;
+		  position: absolute;
+		  margin-left: -6.5px;
+		}
+	}
+}
+/*=========/range=========*/
+
+/*===========Search===========*/
+.search {
+	display: flex;
+	align-items: center;
+	&__input {
+		flex: 1 1 auto;
+		margin-right: 8px;
+		input {
+			width: 100%;
+			border-radius: 18px;
+			background: rgb(247, 247, 247);
+			padding: 10.5px 14px;
+			font-family: $ff;
+			font-size: 12px;
+			font-weight: 500;
+			color: $bl;
+			line-height: $lh;
+			&::placeholder {
+				color: rgb(70, 78, 85);
+			}
+		}
+	}
+	&__btn {
+		width: 36px;
+		height: 36px;
+		background-color: $red;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 17px;
+			height: 17px;
+			fill: $wh;
+		}
+	}
+}
+/*===========/search===========*/
+
+/*==============Adaptive===========*/
+@media(max-width: 414px) {
+	.form {
+		&__item {
+			&_half {
+				width: 100%;
+			}
+		}
+	}
+}
+/*==============/adaptive===========*/

@@ -1,0 +1,41 @@
+$ff: 'Montserrat', sans-serif;
+$lh: 1.21;
+$wh: #ffffff;
+$bl: #000;
+$gray: rgb(92, 96, 109);
+$lgray: rgb(239, 241, 243);
+$dgray: rgb(70, 78, 85);
+$red: rgb(229, 33, 36);
+$dred: rgb(180, 0, 1);
+$blue: rgb(43, 110, 162);
+
+@mixin text {
+	font-family: $ff;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: $lh;
+	color: $bl;
+}
+
+@mixin text_wh {
+	font-family: $ff;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: $lh;
+	color: $wh;
+}
+
+@mixin description {
+	font-family: $ff;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.375;
+	color: $gray;
+}
+
+$maxWidth: 1920;
+@mixin adaptive-font($pcSize, $mobSize) {
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 390;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 390px) / #{$maxWidth}));
+}
