@@ -2088,10 +2088,12 @@ body.hidden {
 /*===============/contactbox=============*/
 /*===============Block==============*/
 .block {
-  margin-bottom: 42px; }
+  margin-bottom: 20px; }
   .block__flex {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d5d5d5; }
     .block__flex > * {
       width: calc(50% - 12px); }
       .block__flex > *:first-child {
@@ -3539,6 +3541,9 @@ body.hidden {
       z-index: 2; }
   .team__photo {
     height: 200px; }
+  .team__inner {
+    border-bottom: none;
+    padding-bottom: 30px; }
   .reviews .section__header {
     text-align: left;
     justify-content: flex-start; }
