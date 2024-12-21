@@ -2318,8 +2318,10 @@ body.hidden {
   .popular__image img {
     width: 100%; }
 
-.popular__slider .popular__card {
-  padding-top: 50px; }
+.popular__slider {
+  border-radius: 24px; }
+  .popular__slider .popular__card {
+    padding-top: 50px; }
 
 /*===============/popular==============*/
 /*===============Exclusive==============*/
@@ -3460,7 +3462,8 @@ body.hidden {
     min-height: 210px; }
   .popular__slider {
     width: calc(100% + 30px);
-    margin: 0 -15px 20px; }
+    margin: 0 -15px 20px;
+    border-radius: 0; }
     .popular__slider .popular__card {
       padding-top: 28px; }
     .popular__slider .popular__title {
@@ -3529,7 +3532,8 @@ body.hidden {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 1; }
+      z-index: 1;
+      border-radius: 24px; }
     .offer__content {
       position: relative;
       z-index: 2; }

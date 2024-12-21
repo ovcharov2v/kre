@@ -1352,6 +1352,7 @@ body.hidden {
 		}
 	}
 	&__slider {
+		border-radius: 24px;
 		.popular__card {
 			padding-top: 50px;
 		}
@@ -2849,6 +2850,7 @@ body.hidden {
 		&__slider {
 			width: calc(100% + 30px);
 			margin: 0 -15px 20px;
+			border-radius: 0;
 			.popular__card {
 				padding-top: 28px;
 			}
@@ -2946,6 +2948,7 @@ body.hidden {
 			top: 0;
 			left: 0;
 			z-index: 1;
+			border-radius: 24px;
 		}
 		&__content {
 			position: relative;
