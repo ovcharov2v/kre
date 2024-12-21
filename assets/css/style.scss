@@ -2558,6 +2558,13 @@ body.hidden {
 
 @media(max-width: 991px) {
 	.intro {
+		&__inner {
+			margin: 0 -15px;
+			background-position: 15% 0%;
+		}
+		&__box {
+			padding: 0 20px;
+		}
 		&__contactbox {
 			display: none;
 		}
@@ -2569,7 +2576,10 @@ body.hidden {
 			margin-right: 0;
 		}
 		.tags {
-			margin-right: -15px;
+			margin-left: -35px;
+			margin-right: -35px;
+			padding-left: 15px;
+			padding-right: 15px;
 		}
 		&__filters {
 			&-row {
@@ -3131,6 +3141,9 @@ body.hidden {
 		.btn-go {
 			display: inline-flex;
 			width: 100%;
+		}
+		.section__header {
+			text-align: left;
 		}
 	}
 

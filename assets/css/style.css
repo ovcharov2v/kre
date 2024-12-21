@@ -3286,6 +3286,11 @@ body.hidden {
     border-radius: 24px; } }
 
 @media (max-width: 991px) {
+  .intro__inner {
+    margin: 0 -15px;
+    background-position: 15% 0%; }
+  .intro__box {
+    padding: 0 20px; }
   .intro__contactbox {
     display: none; }
   .intro__row {
@@ -3294,7 +3299,10 @@ body.hidden {
   .intro__stat {
     margin-right: 0; }
   .intro .tags {
-    margin-right: -15px; }
+    margin-left: -35px;
+    margin-right: -35px;
+    padding-left: 15px;
+    padding-right: 15px; }
   .intro__filters-row {
     flex-wrap: wrap;
     padding: 11px 24px 19px; }
@@ -3637,6 +3645,8 @@ body.hidden {
   .exclusive .btn-go {
     display: inline-flex;
     width: 100%; }
+  .exclusive .section__header {
+    text-align: left; }
   .about__box {
     display: block; }
   .about__info {
