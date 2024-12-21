@@ -3407,6 +3407,9 @@ body.hidden {
 @media (max-width: 760px) {
   .section__header {
     margin-bottom: 20px; }
+  .block__flex {
+    border-bottom: none;
+    padding-bottom: 0; }
   .btn-go {
     position: relative;
     padding-right: 70px; }
@@ -3446,6 +3449,8 @@ body.hidden {
     font-size: 16px; }
   .banner__subtext {
     font-size: 12px; }
+  .banner__box {
+    border-radius: 18px; }
   .popular .section__link {
     display: none; }
   .popular__inner {
