@@ -181,8 +181,8 @@
 	width: 100%;
 	height: calc(100vh - 60px);
 	overflow: auto;
-	position: fixed;
-	top: 60px;
+	position: absolute;
+	top: 100%;
 	left: 0;
 	z-index: 100;
 	background-color: $wh;
@@ -780,7 +780,6 @@
 
 	.menu {
 		height: calc(100vh - 40px);
-		top: 40px;
 	}
 
 	.main {
