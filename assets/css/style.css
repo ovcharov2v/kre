@@ -912,13 +912,18 @@
     border-radius: 13px;
     box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
     background-color: #ffffff;
-    max-height: 300px;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none; }
+    padding: 12px 0; }
     .selectcheckbox__dropdown ::-webkit-scrollbar {
-      width: 0;
-      height: 0; }
+      width: 5px;
+      height: 5px; }
+    .selectcheckbox__dropdown ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom right, #5c606d 0%, #5c606d 100%);
+      border-radius: 3px; }
+    .selectcheckbox__dropdown ::-webkit-scrollbar-track {
+      background-color: rgba(92, 96, 109, 0.12); }
+    .selectcheckbox__dropdown-wrapper {
+      max-height: 300px;
+      overflow: auto; }
     .selectcheckbox__dropdown-header {
       display: flex;
       align-items: center;
@@ -960,7 +965,7 @@
     display: flex;
     flex-direction: column; }
   .selectcheckbox__nav {
-    padding: 13px 15px;
+    padding: 0 15px 13px;
     border-bottom: 1px solid #eff1f3; }
     .selectcheckbox__nav .tabs-nav {
       width: 100%; }
@@ -1630,13 +1635,18 @@ body.hidden {
     border-radius: 13px;
     box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
     background-color: #ffffff;
-    max-height: 260px;
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none; }
+    padding: 12px 0; }
     .dropbox__dropdown ::-webkit-scrollbar {
-      width: 0;
-      height: 0; }
+      width: 5px;
+      height: 5px; }
+    .dropbox__dropdown ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom right, #5c606d 0%, #5c606d 100%);
+      border-radius: 3px; }
+    .dropbox__dropdown ::-webkit-scrollbar-track {
+      background-color: rgba(92, 96, 109, 0.12); }
+    .dropbox__dropdown-wrapper {
+      max-height: 270px;
+      overflow: auto; }
     .dropbox__dropdown-header {
       display: flex;
       align-items: center;
@@ -1676,8 +1686,6 @@ body.hidden {
         width: 100%; }
   .dropbox__inner {
     padding: 16px 20px; }
-  .dropbox__options {
-    padding: 12px 0; }
   .dropbox__option label {
     cursor: pointer;
     padding: 9px 11px;
@@ -1739,7 +1747,12 @@ body.hidden {
   background-color: #eff1f3;
   margin: 0 auto;
   border-radius: 8px;
-  max-width: 100%; }
+  max-width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+  .tabs-nav ::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
   .tabs-nav a {
     display: inline-flex;
     align-items: center;
@@ -3322,7 +3335,7 @@ body.hidden {
     margin-bottom: 19px;
     margin-right: 0; }
   .intro__filters .selectcheckbox__dropdown, .intro__filters .dropbox__dropdown {
-    padding: 0 30px 95px;
+    padding: 0;
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
@@ -3331,6 +3344,9 @@ body.hidden {
     top: 0;
     left: 0;
     z-index: 1000; }
+    .intro__filters .selectcheckbox__dropdown-wrapper, .intro__filters .dropbox__dropdown-wrapper {
+      max-height: 100vh;
+      padding: 0 30px 95px; }
     .intro__filters .selectcheckbox__dropdown-header, .intro__filters .dropbox__dropdown-header {
       display: flex; }
     .intro__filters .selectcheckbox__dropdown-btn, .intro__filters .dropbox__dropdown-btn {

@@ -490,13 +490,21 @@ body.hidden {
 		border-radius: 13px;
 		box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
 		background-color: $wh;
-		max-height: 260px;
-		overflow: auto;
-		-ms-overflow-style: none;
-    	scrollbar-width: none;
-    	::-webkit-scrollbar {
-    	  width: 0;
-    	  height: 0;
+		padding: 12px 0;
+		::-webkit-scrollbar {
+		  width: 5px;
+		  height: 5px;
+		}
+		::-webkit-scrollbar-thumb {
+		  background: linear-gradient(to bottom right, $gray 0%, $gray 100%);
+		  border-radius: 3px;
+		}
+		::-webkit-scrollbar-track {
+		  background-color: rgba(92, 96, 109, 0.12);
+		}
+		&-wrapper {
+			max-height: 270px;
+			overflow: auto;
 		}
 		&-header {
 			display: flex;
@@ -545,9 +553,6 @@ body.hidden {
 	}
 	&__inner {
 		padding: 16px 20px;
-	}
-	&__options {
-		padding: 12px 0;
 	}
 	&__option {
 		label {
@@ -632,6 +637,12 @@ body.hidden {
 	margin: 0 auto;
 	border-radius: 8px;
 	max-width: 100%;
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+	    width: 0;
+	    height: 0;
+	}
 	a {
 		display: inline-flex;
 		align-items: center;
@@ -2609,7 +2620,7 @@ body.hidden {
 			}
 			.selectcheckbox, .dropbox {
 				&__dropdown {
-					padding: 0 30px 95px;
+					padding: 0;
 					width: 100vw;
 					height: 100vh;
 					max-height: 100vh;
@@ -2618,6 +2629,10 @@ body.hidden {
 					top: 0;
 					left: 0;
 					z-index: 1000;
+					&-wrapper {
+						max-height: 100vh;
+						padding: 0 30px 95px;
+					}
 					&-header {
 						display: flex;
 					}

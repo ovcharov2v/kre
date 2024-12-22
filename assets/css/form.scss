@@ -231,13 +231,21 @@
 		border-radius: 13px;
 		box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
 		background-color: $wh;
-		max-height: 300px;
-		overflow: auto;
-		-ms-overflow-style: none;
-    	scrollbar-width: none;
-    	::-webkit-scrollbar {
-    	  width: 0;
-    	  height: 0;
+		padding: 12px 0;
+		::-webkit-scrollbar {
+		  width: 5px;
+		  height: 5px;
+		}
+		::-webkit-scrollbar-thumb {
+		  background: linear-gradient(to bottom right, $gray 0%, $gray 100%);
+		  border-radius: 3px;
+		}
+		::-webkit-scrollbar-track {
+		  background-color: rgba(92, 96, 109, 0.12);
+		}
+		&-wrapper {
+			max-height: 300px;
+			overflow: auto;
 		}
 		&-header {
 			display: flex;
@@ -289,7 +297,7 @@
 		flex-direction: column;
 	}
 	&__nav {
-		padding: 13px 15px;
+		padding: 0 15px 13px;
 		border-bottom: 1px solid $lgray;
 		.tabs-nav {
 			width: 100%;
