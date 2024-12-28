@@ -16,11 +16,13 @@
 		}
 	}
 	&__input {
+		position: relative;
 		input, textarea {
 			width: 100%;
 			border-radius: 8px;
-			background: rgb(243, 247, 250);
-			padding: 14.04px 20px;
+			background: transparent;
+			border: 1px solid rgb(233, 233, 233);
+			padding: 14px 10px;
 			@include text;
 			&::placeholder {
 				color: $bl;
@@ -34,6 +36,17 @@
 				color: rgb(147, 147, 147);
 			}
 		}
+	}
+	&__label {
+		font-family: $ff;
+		font-size: 9px;
+		font-weight: 500;
+		color: $gray;
+		line-height: $lh;
+		position: absolute;
+		top: 3px;
+		left: 10px;
+		z-index: 1;
 	}
 	&__description {
 		font-family: $ff;
@@ -93,7 +106,7 @@
 			justify-content: center;
 			background-color: $lgray;
 			border: 1px solid $lgray;
-			padding: 15px;
+			padding: 14px 15px;
 			border-radius: 8px;
 			font-family: $ff;
 			font-size: 12px;
@@ -146,7 +159,6 @@
 .selectcheckbox {
 	cursor: pointer;
 	display: block;
-	width: 100%;
 	position: relative;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	width: 190px;
@@ -155,6 +167,34 @@
 			top: auto;
 			bottom: calc(100% + 5px);
 		} 
+	}
+	&_right {
+		.selectcheckbox__dropdown {
+			left: auto;
+			right: 0;
+		}
+	}
+	&_big  {
+		.selectcheckbox__dropdown {
+			min-width: 345px;
+			max-width: 100%;
+		}
+	}
+	&_checkbox {
+		.selectcheckbox__option {
+			justify-content: flex-start;
+		}
+	}
+	&__label {
+		font-family: $ff;
+		font-size: 9px;
+		font-weight: 500;
+		color: $gray;
+		line-height: $lh;
+		position: absolute;
+		top: 3px;
+		left: 10px;
+		z-index: 1;
 	}
 	&__select {
 		width: 100%;
@@ -169,9 +209,7 @@
 		border: 1px solid rgb(233, 233, 233);
 		border-radius: 8px;
 		background-color: transparent;
-		span {
-			@include text;
-		}
+		@include text;
 		&:after {
 			content: "";
 			width: 9px;
@@ -208,7 +246,7 @@
 		}
 		span {
 			@include text;
-			color: $bl;
+			color: rgb(70, 78, 85);
 			transition: all .2s linear;
 		}
 		div {
@@ -219,6 +257,39 @@
 			line-height: $lh;
 			transition: all .2s linear;
 		}
+		&-checkbox {
+			margin-right: 9px;
+			display: inline-block;
+			width: 21px;
+			height: 20px;
+			border: 1px solid $dgray;
+			border-radius: 4px;
+			transition: all .2s linear;
+			position: relative;
+			&:after {
+				content: "";
+				width: 11px;
+				height: 9px;
+				background: url("../images/check-icon.svg") center no-repeat;
+				background-size: contain;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+				transition: all .2s linear;
+				opacity: 0;
+			}
+		}
+		&.selected {
+			.selectcheckbox__option-checkbox {
+					border-color: $red;
+					background-color: $red;
+					&:after {
+						opacity: 1;
+					}
+				}
+		}
 	}
 	&__dropdown {
 		display: none;
@@ -228,6 +299,7 @@
 		z-index: 50;
 		background-color: transparent;
 		width: 100%;
+		min-width: 270px;
 		border-radius: 13px;
 		box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);
 		background-color: $wh;
@@ -248,7 +320,8 @@
 			overflow: auto;
 		}
 		&-header {
-			display: flex;
+			//display: flex;
+			display: none;
 			align-items: center;
 			justify-content: space-between;
 			padding: 16px 0;
@@ -278,6 +351,7 @@
 			background-color: $wh;
 		}
 		&-btn {
+			display: none;
 			padding: 19px 33px;
 			border-radius: 14px 14px 0px 0px;
 			box-shadow: 0px 2px 27px 0px rgba(92, 98, 118, 0.23);

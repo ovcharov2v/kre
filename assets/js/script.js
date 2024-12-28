@@ -14,6 +14,14 @@ function tabsS(n)
   $('.selectcheckbox .tabs-block.tab_'+n).fadeIn(222);
 };
 
+function tabsG(n)
+{
+  $('.gallery .tabs-nav a').removeClass('active');
+  $('.gallery .tabs-nav a.t'+n).addClass('active');
+  $('.gallery .tabs-block').fadeOut(0);
+  $('.gallery .tabs-block.tab_'+n).fadeIn(222);
+};
+
 $(document).ready(function() {
   /*======Favorite=============*/
   $(".favorite").on("click", function() {
@@ -113,6 +121,7 @@ $(".header__burger").on("click", function() {
   $(".header__menu").fadeToggle(111);
   $(".menu").slideToggle();
   $('body').toggleClass("hidden");
+  $("main").toggleClass("hidden");
 });
 
 $(".menu__nav-name_drop").on("click", function (event) {
@@ -154,6 +163,93 @@ $(".close-popup").on("click", function () {
     $('body').removeClass("hidden");
 });
 /*==============/popup=================*/
+
+/*==========infrastructure==========*/
+$(".infrastructure__btn").on("click", function() {
+      $(this).parents(".infrastructure__item").find(".infrastructure__description").fadeToggle();
+      $(this).parents(".infrastructure__item").toggleClass('active');
+  });
+/*==========/infrastructure==========*/
+
+/*==========Textbox==========*/
+$(".textbox__btn-more").on("click", function(event) {
+  event.preventDefault();
+  $(this).next().slideToggle();
+  $(this).toggleClass('active');
+});
+/*==========/textbox==========*/
+
+/*==========Filters==========*/
+$(".filters__btn-more").on("click", function(event) {
+  event.preventDefault();
+  $(".filters__more").slideToggle();
+  $(this).toggleClass('active');
+});
+
+$(".filters__open").on("click", function(event) {
+  event.preventDefault();
+    $(".filters__content").slideDown();
+});
+$(".filters__close").on("click", function(event) {
+  event.preventDefault();
+    $(".filters__content").slideUp();
+});
+/*==========/filters__more==========*/
+
+/*==========Sort==========*/
+$(".result__sort-btn").on("click", function(event) {
+  event.preventDefault();
+  if ($(window).width() >= 766) {
+    $(".result__sort-btn").not(this).removeClass('active');
+    $(this).addClass('active');
+  };
+});
+
+$(".result__sort-btn_row").on("click", function(event) {
+  event.preventDefault();
+  $(".result__inner").addClass('result__inner_row');
+  $(".result__inner").show();
+  $(".result__map").hide();
+  $(".result__nav").show();
+});
+
+$(".result__sort-btn_box").on("click", function(event) {
+  event.preventDefault();
+  $(".result__inner").removeClass('result__inner_row');
+  $(".result__inner").show();
+  $(".result__map").hide();
+  $(".result__nav").show();
+});
+
+$(".result__sort-btn_map").on("click", function(event) {
+  event.preventDefault();
+  if ($(window).width() >= 766){
+        $(".result__inner").hide();
+        $(".result__nav").hide();
+        $(".result__map").show();
+  }
+  else {
+    $(this).toggleClass("active");
+    $(".result__inner").fadeToggle(111);
+    $(".result__map").fadeToggle(111);
+    $(".result__nav").fadeToggle(111);
+  };
+});
+/*==========/sort==========*/
+
+/*=========Smooth scroll=============*/
+  $("[data-scroll]").on("click", function(event) {
+  event.preventDefault();
+ 
+      blockID = $(this).data('scroll');
+     
+      blockOffset = $('#'+blockID).offset().top;
+ 
+    $("html, body").animate ({
+      scrollTop: blockOffset - 30
+    }, 1000);
+  });
+/*=========/smooth scroll=============*/
 
   /*=================Sliders===================*/
   /*========Stories__slider========*/
@@ -355,6 +451,118 @@ $(".close-popup").on("click", function () {
       }
   });
 /*=======/awards__slider========*/
+
+/*========Complex__slider========*/
+    new Swiper('.complex__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    resizeReInit: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+/*=======/awards__slider========*/
+
+/*========Infrastructure__slider========*/
+    new Swiper('.infrastructure__slider', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    resizeReInit: true,
+    navigation: {
+      nextEl: '.infrastructure .slider-arrow',
+    },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 7,
+        },
+        660: {
+          slidesPerView: 2.1,
+          spaceBetween: 20,
+        },
+        991: {
+          slidesPerView: 3.1,
+          spaceBetween: 20,
+        },
+        1401: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      }
+  });
+/*=======/infrastructure__slider========*/
+
+/*========Gallery__slider========*/
+    new Swiper('.gallery__slider', {
+    slidesPerView: 1,
+    spaceBetween: 14,
+    loop: true,
+    resizeReInit: true,
+    navigation: {
+      nextEl: '.gallery .slider-arrow',
+    },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 14,
+        },
+        1401: {
+          slidesPerView: 1,
+          spaceBetween: 14,
+        },
+      }
+  });
+/*=======/gallery__slider========*/
+
+/*========Object__slider========*/
+    new Swiper('.object__slider', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    resizeReInit: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 7,
+        },
+        991: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+      }
+  });
+/*=======/object__slider========*/
+
+/*========Watched__slider========*/
+    new Swiper('.watched__slider', {
+    slidesPerView: 4,
+    spaceBetween: 16,
+    resizeReInit: true,
+    navigation: {
+      nextEl: '.watched .slider-arrow',
+    },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.1,
+          spaceBetween: 14,
+        },
+        540: {
+          slidesPerView: 2.1,
+          spaceBetween: 14,
+        },
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+      }
+  });
+/*=======/watched__slider========*/
 /*=================/sliders===================*/
 
 });
@@ -409,7 +617,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-filters");
   const resetBtn = document.getElementById("btn-reset");
 
-  form.addEventListener("change", () => {
+  form.addEventListener("input", () => {
     resetBtn.style.display = "block";
   });
 });
