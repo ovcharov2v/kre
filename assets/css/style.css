@@ -3378,6 +3378,8 @@
     display: none; }
   .object__id {
     font-size: 12px; }
+  .object__nav {
+    left: 45%; }
   .shorts__inner {
     flex-wrap: wrap; }
     .shorts__inner > * {
