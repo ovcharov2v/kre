@@ -2860,8 +2860,6 @@ body.hidden {
 		&__slider {
 			margin-right: -15px;
 			padding-right: 15px;
-			margin-left: -15px;
-			padding-left: 15px;
 		}
 	}
 
@@ -2876,8 +2874,6 @@ body.hidden {
 		&__slider {
 			margin-right: -15px;
 			padding-right: 15px;
-			margin-left: -15px;
-			padding-left: 15px;
 		}
 		&__item {
 			padding: 75px 20px 20px;
@@ -3382,6 +3378,14 @@ body.hidden {
 		}
 	}
 
+	.card {
+		&_big {
+			.card__title {
+				min-height: 45px;
+			}
+		}
+	}
+
 	.start {
 		position: relative;
 		padding-bottom: 60px;
@@ -3628,8 +3632,6 @@ body.hidden {
 		&__slider {
 			margin-right: -15px;
 			padding-right: 15px;
-			margin-left: -15px;
-			padding-left: 15px;
 		}
 	}
 
@@ -3700,16 +3702,6 @@ body.hidden {
 		background-position: 90% 0;
 		&__content {
 			max-width: 50%;
-		}
-	}
-}
-
-@media(max-width: 390px) {
-	.card {
-		&_big {
-			.card__title {
-				min-height: 45px;
-			}
 		}
 	}
 }
