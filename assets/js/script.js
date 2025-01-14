@@ -305,6 +305,7 @@ $(".result__sort-btn_map").on("click", function(event) {
     new Swiper('.exclusive__slider', {
     slidesPerView: 3,
     spaceBetween: 18,
+    loop: true,
     resizeReInit: true,
     navigation: {
       nextEl: '.exclusive .slider-arrow',

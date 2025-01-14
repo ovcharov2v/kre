@@ -5304,6 +5304,9 @@ body.hidden {
   .exclusive .btn-go {
     margin-top: 15px;
     display: none; }
+  .exclusive__slider {
+    padding-left: 1px;
+    margin-left: -1px; }
   .exclusive__wrapper {
     align-items: center; }
 
@@ -5472,10 +5475,23 @@ body.hidden {
   top: 176px; }
 
 .start__slide {
-  height: 100% !important; }
+  height: auto; }
+  .start__slide .card {
+    height: 100%; }
+    .start__slide .card__inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column; }
+    .start__slide .card__info {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column; }
+    .start__slide .card__row {
+      flex: 1 1 auto; }
 
 .start__wrapper {
-  align-items: center; }
+  align-items: stretch;
+  padding-bottom: 2px; }
 
 /*==============/start=================*/
 /*===============Service=================*/
