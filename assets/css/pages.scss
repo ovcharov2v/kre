@@ -1531,6 +1531,13 @@
 	.title {
 		margin-bottom: 38px;
 	}
+	&__inner {
+		position: relative;
+	}
+	.slider-arrow {
+		top: 50%;
+		transform: translateY(-50%);
+	}
 	&__wrapper {
 		align-items: center;
 	}

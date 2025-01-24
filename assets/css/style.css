@@ -2653,6 +2653,11 @@
     border-radius: 0 0 44px 44px; }
   .watched .title {
     margin-bottom: 38px; }
+  .watched__inner {
+    position: relative; }
+  .watched .slider-arrow {
+    top: 50%;
+    transform: translateY(-50%); }
   .watched__wrapper {
     align-items: center; }
   .watched__slide {
