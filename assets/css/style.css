@@ -4514,7 +4514,7 @@ body.hidden {
         font-weight: 500;
         line-height: 1.21;
         color: #000;
-        margin: 0; }
+        margin: 0 4px; }
       .dropbox__select-input span:last-child {
         margin-right: 0; }
         .dropbox__select-input span:last-child:after {
