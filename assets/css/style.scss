@@ -678,7 +678,7 @@ body.hidden {
 				&:after {
 					content: " –– ";
 					@include text;
-					margin: 0 4px;
+					margin: 0;
 				}
 				&:last-child {
 					margin-right: 0;
