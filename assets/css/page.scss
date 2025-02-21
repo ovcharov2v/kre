@@ -457,6 +457,16 @@
 	&.hidden {
 		z-index: 6;
 	}
+
+	&--bg-dgray {
+		background: rgb(242, 242, 242);
+
+		.breadcrumbs {
+			background-color: #fff;
+			margin-bottom: 0;
+			padding-bottom: 12px;
+		}
+	}
 }
 
 /*==============Breacrumbs===========*/

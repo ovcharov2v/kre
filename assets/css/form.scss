@@ -162,6 +162,9 @@
 	position: relative;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	width: 190px;
+	&--filter {
+		width: auto;
+	}
 	&_top {
 		.selectcheckbox__dropdown {
 			top: auto;
@@ -226,6 +229,12 @@
 			&:after {
 				transform: translateY(-50%) rotate(180deg);
 			}
+		}
+		.selectcheckbox--filter & {
+			padding: 9px 30px 9px 10px;
+			border-color: transparent;
+			background-color: #F6F9FB;
+			font-size: 12px;
 		}
 	}
 	&__option {
@@ -383,6 +392,9 @@
 				}
 			}
 		}
+	}
+	&__prepend {
+		color: #949BA0;
 	}
 }
 /*=========/selectcheckbox=========*/

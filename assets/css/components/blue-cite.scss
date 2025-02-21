@@ -1,0 +1,34 @@
+.blue-cite {
+  position: relative;
+  padding: 50px 130px 166px 50px;
+  border-radius: 44px 44px 14px 44px;
+  background: linear-gradient(-45deg, #B1CED8, #5F8DA0);
+  font-size: 36px;
+  line-height: 44px;
+  color: #fff;
+
+  &::after {
+    position: absolute;
+    bottom: 56px;
+    left: 56px;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='36' viewBox='0 0 40 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.81988 0.842773C3.63388 0.842773 0.238281 4.33457 0.238281 8.64277C0.238281 12.9484 3.63388 16.4428 7.81988 16.4428C15.3989 16.4428 10.3471 31.5202 0.238281 31.5202V35.1602C18.2797 35.1628 25.3491 0.842773 7.81988 0.842773ZM29.6599 0.842773C25.4765 0.842773 22.0809 4.33457 22.0809 8.64277C22.0809 12.9484 25.4765 16.4428 29.6599 16.4428C37.2415 16.4428 32.1897 31.5202 22.0809 31.5202V35.1602C40.1197 35.1628 47.1891 0.842773 29.6599 0.842773Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    content: "";
+  }
+
+  @include max768 {
+    padding: 20px 20px 130px 20px;
+    border-radius: 24px 24px 14px 24px;
+    font-size: 20px;
+    line-height: 24px;
+
+    &::after {
+      bottom: 20px;
+      left: 20px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+}

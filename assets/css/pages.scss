@@ -1783,6 +1783,12 @@
 	z-index: 2;
 	.title {
 		margin-bottom: 20px;
+
+		&--no-mb {
+			@include max768 {
+				margin-bottom: 0;
+			}
+		}
 	}
 	&__open {
 		margin-top: 18px;
@@ -1985,6 +1991,33 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+
+	&__sort-filter {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include max768 {
+			flex-direction: column;
+			gap: 24px;
+			align-items: flex-start;
+		}
+	}
+	&__sort-filter-group {
+		display: flex;
+		gap: 10px;
+	}
+	&__sort-filter-result {
+		font-size: 16px;
+		line-height: 27px;
+		font-weight: 500;
+		color: #5C606D;
+
+		@include max768 {
+			font-size: 12px;
+			margin-bottom: -16px;
+		}
+	}
 }
 /*=============/filters===============*/
 
@@ -2176,10 +2209,25 @@
 		&:hover {
 			background: rgb(246, 247, 249);
 		}
+
+		&--show-mobile {
+			display: none;
+
+			@media(max-width: 765px) {
+				display: block;
+			}
+		}
 	}
 	&__pagin {
 		display: flex;
 		justify-content: center;
+		&--news {
+			margin-top: 62px;
+
+			@media (max-width:768px) {
+				margin-top: 40px;
+			}
+		}
 		&-item {
 			width: 36px;
 			height: 36px;
@@ -2194,6 +2242,7 @@
 			color: $bl;
 			transition: all .2s linear;
 			margin-right: 6px;
+			white-space: nowrap;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -2217,13 +2266,21 @@
 				background-color: $bl;
 				border-color: $bl;
 				color: $wh;
+
+				.result__pagin--news & {
+					background-color: transparent;
+					border-color: $dred;
+					color: $dred;
+				}
+			}
+			.result__pagin--news & {
+				min-width: 55px;
+				border-radius: 50px;
 			}
 		}
 	}
 }
 /*=============/result===============*/
-
-
 
 /*================Adaptive================*/
 @media(max-width: 1400px) {
@@ -3046,12 +3103,17 @@
 		&__pagin {
 			position: relative;
 			padding: 0 42px;
+
 			&-item {
 				&:nth-child(n + 4) {
 					display: none;
 				}
 				&:nth-last-child(2) {
 					margin-right: 0;
+
+					.result__pagin--news & {
+						margin-right: 6px;
+					}
 				}
 				&:nth-last-child(2), &:nth-last-child(3) {
 					display: inline-flex;
@@ -3062,6 +3124,10 @@
 					right: 0;
 					z-index: 1;
 					display: inline-flex;
+
+					.result__pagin--news & {
+						position: static;
+					}
 				}
 			}
 		}

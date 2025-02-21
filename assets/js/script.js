@@ -55,7 +55,13 @@ $(".selectcheckbox__select").on("click", function(event) {
 $(".selectcheckbox__option").on("click", function(event) {
   event.preventDefault();
   $(this).parents(".selectcheckbox").find(".selectcheckbox__option").removeClass('selected');
-  $(this).parents(".selectcheckbox").find('.selectcheckbox__select').html($(this).find("span").html());
+  let prepend = $(this).parents(".selectcheckbox").find('.selectcheckbox__prepend');
+  if(prepend.length) {
+    $(this).parents(".selectcheckbox").find('.selectcheckbox__select-value').html($(this).find("span").html().toLowerCase());
+  }
+  else {
+    $(this).parents(".selectcheckbox").find('.selectcheckbox__select').html($(this).find("span").html());
+  }
   $(this).parents(".selectcheckbox").find('.selectcheckbox__select').removeClass('active');
   $(this).parents(".selectcheckbox__dropdown").slideUp();
   $(this).addClass('selected');
